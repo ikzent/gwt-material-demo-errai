@@ -12,7 +12,11 @@ import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.design.addins.client.autocomplete.MaterialAutoComplete;
 import gwt.material.design.addins.client.combobox.MaterialComboBox;
 import gwt.material.design.addins.client.timepicker.MaterialTimePicker;
-import gwt.material.design.client.base.HasError;
+import gwt.material.design.client.base.AbstractTextWidget;
+import gwt.material.design.client.base.AbstractValueWidget;
+import gwt.material.design.client.base.HasErrorText;
+import gwt.material.design.client.base.HasSuccessText;
+import gwt.material.design.client.base.MaterialWidget;
 import gwt.material.design.client.ui.*;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
@@ -138,23 +142,23 @@ public class ErrorsPage extends AbstractPage {
         buildButtonPanel(autocomplete, buttonPanel);
     }
 
-    protected void buildButtonPanel(HasError widget, MaterialRow buttonPanel) {
+    protected void buildButtonPanel(AbstractValueWidget<?> widget, MaterialRow buttonPanel) {
         buttonPanel.setMarginTop(20);
         MaterialButton btnError = new MaterialButton("Error");
         btnError.addClickHandler(clickEvent -> {
-            widget.setError("This is an error message");
+            widget.setErrorText("This is an error message");
         });
         buttonPanel.add(btnError);
 
         MaterialButton btnSuccess = new MaterialButton("Success");
         btnSuccess.addClickHandler(clickEvent -> {
-            widget.setSuccess("This is a success message");
+            widget.setSuccessText("This is a success message");
         });
         buttonPanel.add(btnSuccess);
 
         MaterialButton btnClear = new MaterialButton("Clear");
         btnClear.addClickHandler(clickEvent -> {
-            widget.clearErrorOrSuccess();
+            widget.clearErrorText();
         });
         buttonPanel.add(btnClear);
     }

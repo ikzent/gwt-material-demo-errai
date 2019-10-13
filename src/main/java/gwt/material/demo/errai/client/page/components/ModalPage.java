@@ -3,7 +3,7 @@ package gwt.material.demo.errai.client.page.components;
 import gwt.material.demo.errai.client.page.AbstractPage;
 import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.demo.errai.client.page.PageCategory;
-import gwt.material.design.client.constants.ModalType;
+import gwt.material.design.client.constants.DialogType;
 import gwt.material.design.client.ui.*;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
@@ -20,7 +20,7 @@ public class ModalPage extends AbstractPage {
 
     @Inject
     @DataField
-    private MaterialModal modalBasic;
+    private MaterialDialog modalBasic;
 
     @Inject
     @DataField
@@ -28,7 +28,7 @@ public class ModalPage extends AbstractPage {
 
     @Inject
     @DataField
-    private MaterialModal modalFixedFooter;
+    private MaterialDialog modalFixedFooter;
 
     @Inject
     @DataField
@@ -36,7 +36,7 @@ public class ModalPage extends AbstractPage {
 
     @Inject
     @DataField
-    private MaterialModal modalBottomSheet;
+    private MaterialDialog modalBottomSheet;
 
     @Inject
     @DataField
@@ -44,7 +44,7 @@ public class ModalPage extends AbstractPage {
 
     @Inject
     @DataField
-    private MaterialModal modalAutoHide;
+    private MaterialDialog modalAutoHide;
 
     @Inject
     @DataField
@@ -52,7 +52,7 @@ public class ModalPage extends AbstractPage {
 
     @Inject
     @DataField
-    private MaterialModal modalEvents;
+    private MaterialDialog modalEvents;
 
     @Inject
     @DataField
@@ -100,12 +100,12 @@ public class ModalPage extends AbstractPage {
     }
 
     private void buildBottomSheet() {
-        modalBottomSheet.setType(ModalType.BOTTOM_SHEET);
+        modalBottomSheet.setType(DialogType.BOTTOM_SHEET);
         buildModal(modalBottomSheet, btnBottomSheet);
     }
 
     private void buildFixedFooter() {
-        modalFixedFooter.setType(ModalType.FIXED_FOOTER);
+        modalFixedFooter.setType(DialogType.FIXED_FOOTER);
         buildModal(modalFixedFooter, btnFixedFooter);
     }
 
@@ -113,14 +113,14 @@ public class ModalPage extends AbstractPage {
         buildModal(modalBasic, btnBasic);
     }
 
-    private void buildModal(MaterialModal modal, MaterialButton activator) {
-        MaterialModalContent content = new MaterialModalContent();
+    private void buildModal(MaterialDialog modal, MaterialButton activator) {
+        MaterialDialogContent content = new MaterialDialogContent();
         MaterialTitle title = new MaterialTitle();
         title.setTitle("Default Modal");
         title.setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum");
         content.add(title);
 
-        MaterialModalFooter footer = new MaterialModalFooter();
+        MaterialDialogFooter footer = new MaterialDialogFooter();
         MaterialButton btnClose = new MaterialButton();
         btnClose.addClickHandler(clickEvent -> {
             modal.close();

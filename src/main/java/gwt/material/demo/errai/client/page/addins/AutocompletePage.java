@@ -14,8 +14,8 @@ import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.design.addins.client.autocomplete.MaterialAutoComplete;
 import gwt.material.design.client.constants.Color;
 import gwt.material.design.client.ui.MaterialButton;
-import gwt.material.design.client.ui.MaterialModal;
-import gwt.material.design.client.ui.MaterialModalContent;
+import gwt.material.design.client.ui.MaterialDialog;
+import gwt.material.design.client.ui.MaterialDialogContent;
 import gwt.material.design.client.ui.MaterialToast;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
@@ -46,7 +46,7 @@ public class AutocompletePage extends AbstractPage {
 
     @Inject
     @DataField
-    private MaterialModal modal;
+    private MaterialDialog modal;
 
     @Inject
     @DataField
@@ -77,7 +77,7 @@ public class AutocompletePage extends AbstractPage {
     }
 
     protected void buildModal() {
-        MaterialModalContent content = new MaterialModalContent();
+        MaterialDialogContent content = new MaterialDialogContent();
         modal.setDismissible(true);
         modal.add(content);
         MaterialAutoComplete ac4 = new MaterialAutoComplete();

@@ -7,8 +7,8 @@ import gwt.material.demo.errai.client.page.AbstractPage;
 import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.design.addins.client.combobox.MaterialComboBox;
 import gwt.material.design.client.ui.MaterialButton;
-import gwt.material.design.client.ui.MaterialModal;
-import gwt.material.design.client.ui.MaterialModalContent;
+import gwt.material.design.client.ui.MaterialDialog;
+import gwt.material.design.client.ui.MaterialDialogContent;
 import gwt.material.design.client.ui.MaterialToast;
 import gwt.material.design.client.ui.html.OptGroup;
 import gwt.material.design.client.ui.html.Option;
@@ -116,10 +116,10 @@ public class ComboBoxPage extends AbstractPage {
 
     @Inject
     @DataField
-    private MaterialModal modal;
+    private MaterialDialog modal;
 
     @Inject
-    private MaterialModalContent modalContent;
+    private MaterialDialogContent modalContent;
 
     @Inject
     @DataField

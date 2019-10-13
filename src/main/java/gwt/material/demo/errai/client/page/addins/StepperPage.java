@@ -35,14 +35,14 @@ public class StepperPage extends AbstractPage {
 
     @Inject
     @DataField
-    private MaterialModal modal;
+    private MaterialDialog modal;
 
     @Inject
     @DataField
     private MaterialButton btnModal;
 
     @Inject
-    private MaterialModalContent content;
+    private MaterialDialogContent content;
 
     @Inject
     private MaterialStepper stepper3;
@@ -211,7 +211,7 @@ public class StepperPage extends AbstractPage {
             if (type == ERROR) {
                 btnPrev.setText("Set Error");
                 btnPrev.addClickHandler(clickEvent -> {
-                    stepper.setError("Alert Error");
+                    stepper.setErrorText("Alert Error");
                 });
             } else {
                 btnPrev.addClickHandler(clickEvent -> {
